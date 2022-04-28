@@ -22,7 +22,7 @@ const Sidebar = (props: SidebarProps) => {
   const { sdk, ENVURL } = props;
   const { contentType } = sdk.ids || {};
   const obj = URLMAPPING[contentType];
-  const href = `${ENVURL}${obj.uri || ''}${sdk.entry.fields[obj.query]?.getValue()}`;
+  const href = `${ENVURL}${obj?.uri || ''}${sdk.entry.fields[obj?.query]?.getValue()}`;
 
   useEffect(() => {
     sdk.window.startAutoResizer();
